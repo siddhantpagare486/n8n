@@ -16,7 +16,7 @@ model = genai.GenerativeModel("models/gemini-2.5-flash")
 # -----------------------------
 st.title("AI Document Orchestrator")
 
-file = st.file_uploader("Upload a document (txt, PDF, DOCX)")
+file = st.file_uploader("Upload resume (txt, PDF, DOCX)")
 
 def extract_text(file):
     """Extract text from txt, pdf, or docx"""
@@ -74,4 +74,5 @@ if file:
                 st.error(f"Error sending to webhook: {e}")
 
     else:
+
         st.error("Unsupported file type. Please upload .txt, .pdf, or .docx")
